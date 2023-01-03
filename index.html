@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Compiler</title>
+  </head>
+  <body>
+    <h1>HTML Compiler</h1>
+    <p>Enter your HTML code in the textarea below:</p>
+    <textarea id="html-input"></textarea>
+    <button id="compile-button">Compile</button>
+    <h2>Output</h2>
+    <iframe id="html-output"></iframe>
+    <script>
+      // Add an event listener to the compile button
+      document.getElementById('compile-button').addEventListener('click', function() {
+        // Get the HTML code from the textarea
+        var html = document.getElementById('html-input').value;
+        // Set the HTML code as the content of the iframe
+        document.getElementById('html-output').contentWindow.document.write(html);
+      });
+    </script>
+  </body>
+</html>
